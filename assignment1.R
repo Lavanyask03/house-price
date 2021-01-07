@@ -1,0 +1,13 @@
+adf <- read.csv("D:/Courses/Udemy - Complete Machine Learning with R studio - ML for 2020/Introduction/Data/Cardata.csv", header = TRUE)
+summary(adf)
+hist(adf$disp)
+hist(adf$HP)
+hist(adf$wt)
+pairs(~mpg + disp + HP + wt, data = adf)
+
+plot(adf$mpg,adf$disp)
+
+amultiple_model <- lm(mpg~., data = adf)
+summary(amultiple_model)
+# final equation
+# mpg = 46.264 - 0.3979* cyc - 0.0001 * disp -0.0453 * HP -0.0052*wt -0.0291*accel
